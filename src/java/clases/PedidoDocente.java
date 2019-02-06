@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package clases;
 
-import Patron_Bridge_MSM.Mensaje;
+import Patron_Bridge_MSM.Login;
 
 /**
  *
- * @author Usuario
+ * @author renzo
  */
-public class Pedido  implements Mensaje{
+public class PedidoDocente implements Login {
     private int id;
+    private int idDocente;
+    private int idPedido;
     private String fecha;
     private String nombre;
     private String apellido;
@@ -24,11 +21,10 @@ public class Pedido  implements Mensaje{
     private String ensayos;
     private String observaciones;
 
-    public Pedido() {
-    }
-
-    public Pedido(int id, String fecha, String nombre, String apellido, String empresa, String telefono, String estudio, String proyecto, String controlcalidad, String ensayos, String observaciones) {
+    public PedidoDocente(int id, int idDocente, int idPedido, String fecha, String nombre, String apellido, String empresa, String telefono, String estudio, String proyecto, String controlcalidad, String ensayos, String observaciones) {
         this.id = id;
+        this.idDocente = idDocente;
+        this.idPedido = idPedido;
         this.fecha = fecha;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -41,13 +37,34 @@ public class Pedido  implements Mensaje{
         this.observaciones = observaciones;
     }
 
-    public int getId() {     
-        System.out.println("ID EN LA CLASE:"+id);
+    public PedidoDocente() {
+    }
+
+    
+    
+     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    ////
+    public int getIdDocente() {
+        return idDocente;
+    }
+
+    public void setIdDocente(int idDocente) {
+        this.idDocente = idDocente;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 
     public String getFecha() {
@@ -130,33 +147,18 @@ public class Pedido  implements Mensaje{
         this.observaciones = observaciones;
     }
     
+    
+    
+
     @Override
-    public String getMensajeInsertCorrecto() {
-        return "El pedido se ingreso correctamente...";
+    public String getCredencialesCorrectas() {
+        return "Pedido se ingreso Correctamente";
     }
 
     @Override
-    public String getMensajeInsertInCorrecto() {
-        return "Error al ingresar el pedido...";
+    public String getCredencialesIncorrectas() {
+       return "Pedido No se ingreso ";
     }
+    
 
-    @Override
-    public String getMensajeActualizadoCorrecto() {
-        return "El pedido se actualizo correctamente..";
-    }
-
-    @Override
-    public String getMensajeActualizadoIncorrecto() {
-        return "Error al actualizar..";
-    }
-
-    @Override
-    public String getMensajeEliminadoCorrecto() {
-        return "El pedido se elimino correctamente..";
-    }
-
-    @Override
-    public String getMensajeEliminadoIncorrecto() {
-        return "Error al eliminar...";
-    }
 }

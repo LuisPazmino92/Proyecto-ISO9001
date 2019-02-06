@@ -74,6 +74,7 @@
                 <%
                    
                     List<Pedido> lista = (List<Pedido>)request.getAttribute("lista");
+                    
                     //ArrayList<Pedido> lista = pedpedidodao.
                     for(Pedido objPedido :lista){
                          
