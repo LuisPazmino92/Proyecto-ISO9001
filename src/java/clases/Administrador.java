@@ -62,12 +62,12 @@ public class Administrador implements Login{
 
     @Override
     public String getCredencialesCorrectas() {
-        return "Usuario y Contraseña Correctos";
+        return "User and Password Correctos";
     }
 
     @Override
     public String getCredencialesIncorrectas() {
-        return "Usuario y Contraseña Incorrectos";
+        return "User and Password Incorrectos";
     }
      
 }
