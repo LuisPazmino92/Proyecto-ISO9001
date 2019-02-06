@@ -13,10 +13,19 @@ import Patron_Bridge_MSM.Login;
  * @author Usuario
  */
 public class Administrador implements Login{
-    public String nombre;
-    public String apellido;
-    public String usuario ;
-    public String clave; 
+    private String nombre;
+    private String apellido;
+    private String usuario ;
+    private String clave; 
+    
+    //Implementacion de Singleton
+    private static Administrador instance; //unica instancia para la clase
+    public static Administrador getinstance(){
+        if(instance == null){
+            instance = new Administrador();
+        }
+        return instance;
+    }
 
     public Administrador() {
     }

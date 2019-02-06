@@ -72,7 +72,7 @@ public class LoginAdmin extends HttpServlet {
 
         LoginAdminDAO objLoginAdminDao = new LoginAdminDAO();//instancia Adaptador -> las sentencias para login
 
-        Administrador objAdmin = new Administrador();
+        Administrador objAdmin = Administrador.getinstance();//patron SINGLETON
         //objpedido.setId(id);
 
         objAdmin.setUsuario(us);
