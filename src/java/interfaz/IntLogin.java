@@ -6,6 +6,6 @@ import clases.Administrador;
  *
  * @author Usuario
  */
-public interface IntLoginAdmin {
+public interface IntLogin {
     Administrador login(String usuario, String clave);
 }

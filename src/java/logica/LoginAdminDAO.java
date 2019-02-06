@@ -7,18 +7,18 @@ package logica;
 
 import adaptador.ConexionJDBC;
 import clases.Administrador;
-import interfaz.IntLoginAdmin;
 import java.sql.Connection;
 import static java.sql.DriverManager.getConnection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import interfaz.IntLogin;
 
 /**
  *
  * @author Usuario
  */
-public class LoginAdminDAO implements IntLoginAdmin {
+public class LoginAdminDAO implements IntLogin {
 
     private Connection con;
 
@@ -46,7 +46,7 @@ public class LoginAdminDAO implements IntLoginAdmin {
     public Administrador login(String usuario, String clave) {
         System.out.println("USUARIO: "+usuario);
         System.out.println("CLAVE: "+ clave);
-        Administrador objAdmin = new Administrador();
+        Administrador objAdmin =  new Administrador();
         try {
             String sql = "SELECT nombre,apellido,usuario,clave FROM ADMIN WHERE USUARIO = '" + usuario + "' AND CLAVE = '" + clave+"'";
             Statement stm = getConnection().createStatement();
