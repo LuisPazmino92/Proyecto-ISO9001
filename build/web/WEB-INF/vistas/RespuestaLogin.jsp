@@ -20,7 +20,7 @@
             %>
         </h1>
         <h2 align = "center" >
-            <a href = "<%=request.getContextPath()%>/ListarPedidos.html">Ok</a><!-- Redireccionamos a la pagina deseada-->
+            <a href = "<%=request.getContextPath()%>/ListarPedidos.html">OkRespuestaLogin</a><!-- Redireccionamos a la pagina deseada-->
         </h2>
     </body>
 </html>

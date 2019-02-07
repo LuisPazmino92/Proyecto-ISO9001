@@ -1,14 +1,20 @@
 package servlet;
 
+import clases.Docente;
 import clases.Pedido;
 import clases.PedidoDocente;
+import interfaz.IntPedidoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logica.LoginDocenteDAO;
+import logica.PedidoDAO;
+import logica.PedidoDocenteDAO;
 
 /**
  *
@@ -20,7 +26,6 @@ public class AgregarPedidoDocente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        
         getServletContext().getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp").forward(request, response);
 
     }
@@ -29,67 +34,40 @@ public class AgregarPedidoDocente extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-       int id = Integer.parseInt(request.getParameter("id"));
-        
-        
-       // System.out.println("Get id;" + id);
-        Pedido objpedido = new Pedido();
-        objpedido.setId(id);
-        //request.setAttribute("id", id);
-        request.setAttribute("pedidoDocente", objpedido);
-        //request.getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp").forward(request, response);
+        Pedido objPedido = new Pedido();
+        request.setAttribute("pedido", objPedido);
+
+        request.getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        Pedido p= new Pedido();
-        int idd = p.getId();
-        //int id = Integer.parseInt(request.getParameter("id"));
-        System.out.println("iddd/"+idd);
+
+        //////
+        String userDocente = request.getParameter("usuarioDocente");
+        String claveDocente = request.getParameter("claveDocente");
+        String fechapedido = request.getParameter("fecha");
+
+        //PedidoDocenteDAO objPedidoDoceteDao = new PedidoDocenteDAO();
+        PedidoDAO objPedidoDao = new PedidoDAO();
+        LoginDocenteDAO objLoginDocenteDao = new LoginDocenteDAO();
+
+        Docente objDocente = new Docente();
+
+        Pedido objPedido = new Pedido();
+
+        objDocente.setUserDocente(userDocente);
+        objDocente.setPassDocente(claveDocente);
+
+        IntPedidoDAO objIntPedidoDAO = new PedidoDAO();
+        List<Pedido> lista = objIntPedidoDAO.listarTodos();
+       System.out.println("Empresa: " + objPedido.getEmpresa());
         
-        PedidoDocente objpedidodocente = new PedidoDocente();
-        //objpedido.getId();
-        System.out.println("idpost"+objpedidodocente.getId());
-        /*String idDocente = request.getParameter("idDocente");
-        /*Pedido*/
- /*String fecha = request.getParameter("fecha");
-        String nombre = request.getParameter("nombre");
-        String apellido = request.getParameter("apellido");
-        String empresa = request.getParameter("empresa");
-        String telefono = request.getParameter("telefono");
-        String estudio = request.getParameter("estudio");
-        String proyecto = request.getParameter("proyecto");
-        String controlcalidad = request.getParameter("controlcalidad");
-        String observaciones = request.getParameter("observaciones");*/
-
-
- /*PedidoDAO objPedidoDao = new PedidoDAO();//instancia Adaptador -> las sentencias para  CRUD
-
-        Pedido objpedido = new Pedido();
-        //objpedido.setId(id);
-        objpedido.setFecha(fecha);
-        objpedido.setNombre(nombre);
-        objpedido.setApellido(apellido);
-        objpedido.setEmpresa(empresa);
-        objpedido.setTelefono(telefono);
-        objpedido.setEstudio(estudio);
-        objpedido.setProyecto(proyecto);
-        objpedido.setControlcalidad(controlcalidad);
-        objpedido.setObservaciones(observaciones);
-
-        boolean respuesta = objPedidoDao.registrar(objpedido);//enviamos objPedido a la clase adaptador para crud
-
-        if (respuesta) {
-            String msm = objpedido.getMensajeInsertCorrecto();
-            //System.out.println(msm);
-            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaCliente.jsp?mensaje=" + msm).forward(request, response);
-        } else {
-            String msm = objpedido.getMensajeInsertInCorrecto();
-            //System.out.println(msm);
-            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaCliente.jsp?mensaje=" + msm).forward(request, response);
-        }*/
+        //String uD = objdocente.getUserDocente();
+        //String cD = objdocente.getPassDocente();
+        //////
     }
 
     @Override

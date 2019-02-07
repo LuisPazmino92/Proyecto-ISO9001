@@ -18,7 +18,7 @@ Pedido objPedido = (Pedido) request.getAttribute("pedido");
     <body>
         <section class ="header">
             <ul>
-                <li><a href="login.html">Administrador</a></li>
+                <li><a href="index.html">Administrador</a></li>
             </ul>
         </section>
 

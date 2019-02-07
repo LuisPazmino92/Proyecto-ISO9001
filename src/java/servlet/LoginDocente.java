@@ -29,6 +29,7 @@ public class LoginDocente extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         Docente objDocente = new Docente();
+       
         request.setAttribute("docente", objDocente);
         request.getRequestDispatcher("/WEB-INF/vistas/LoginDocente.jsp").forward(request, response);
     }
@@ -37,7 +38,7 @@ public class LoginDocente extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-
+        
         String userDocente = request.getParameter("usuarioDocente");
         String claveDocente = request.getParameter("claveDocente");
         
@@ -51,6 +52,7 @@ public class LoginDocente extends HttpServlet {
         Docente objdocente = objLoginDocenteDao.login(userDocente, claveDocente);
         System.out.println("USUARIO: " + objdocente.getUserDocente());
         System.out.println("CLAVE: " + objdocente.getPassDocente());
+         System.out.println("aaeee"+objDocente.getApellidoDocente());
         String uD = objdocente.getUserDocente();
         String cD = objdocente.getPassDocente();
          if ((uD != null) && (cD != null)) {
