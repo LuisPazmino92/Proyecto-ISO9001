@@ -9,9 +9,17 @@
 <html>
     <head>
         <title>ISO 9001</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>       
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />	
+        <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
         <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -30,7 +38,7 @@
                     <h2>Registro de Proyectos UTPL</h2>
                     <ul>
 
-                        
+
                         <li><a href="index.html">Inicio</a></li>
 
                     </ul>
@@ -38,45 +46,58 @@
                 <div class="clear"> </div>
             </section>
         </header>
-    <main>
-        <section class="seccion1">
-            <img src="imagenes/fondo.jpg">
+
+        <section class ="headerloginadmin">
+
+            <div class="row">
+                <div class="col"><p></p>
+                </div>
+                <div class="col">
+
+                    <p></p>
+                </div>
+                <div class="col">
+
+                    <p></p>
+                </div>
+            </div>
+
+
         </section>
-        <section class="seccion2">
+        <section>
 
-            <h1>Registro de Usuarios</h1>
-            <h2>Para iniciar sesión ingrese su usuario con el formato usuario@utpl.edu.ec</h2>
+            <div class="row">
+                <div class="col-8"><img src="imagenes/fondo.jpg">  </div>
 
-            <section class="login">
+                <div class="col-3">
+                    <h1>Login Admin</h1>
+                    <form method= "post" action="<%=request.getContextPath()%>/LoginAdmin.html">
+                        <div class="form-group row">
+                            <label for="user"class="col-3 col-form-label">User:</label>
+                            <input id="usuario" type="text" name="usuario" placeholder="usuario@utpl.edu.ec" required class="form-control col-9">
+                            <label for="pass"class="col-3 col-form-label">Password:</label>
+                            <input id="clave" type="text" name="clave" placeholder="Contraseña" required  class="form-control col-9">
+                            <!--<button type="submit">Ingresar</button>-->
+                            <input type="submit" value="Ingresar" name="submit" class="btn btn-danger" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-1"></div>
+            </div>
 
-               <form method= "post" action="<%=request.getContextPath()%>/LoginAdmin.html">
-                   
-                 
-                <input id="usuario" type="text" name="usuario" placeholder="usuario@utpl.edu.ec" required><br>
-               
-                <input id="clave" type="text" name="clave" placeholder="Contraseña" required><br><br>
-                <button type="submit">Ingresar</button>
-                </form>
-               
-                    <div class="error"><span></span></div>
-                <h2>Si olvidó su contraseña o desea gestionar sus credenciales de acceso a los servicios de UTPL, haga click aquí.</h2>
-            </section>
-        </section>
+            <footer>
+                <section class="iconos">
+                    <ul>
+                        <a href=""><span class="icon-facebook2 estilo_icono"></span></a>
+                        <a href=""><span class="icon-instagram estilo_icono"></span></a>
+                        <a href=""><span class="icon-google-plus2 estilo_icono"></span></a>
+                    </ul>
+                </section>
+                <section class="texto_footer">
+                    <h6>©Registro de Proyectos UTPL</h6>
+                    <h6>@renzo - @pazmiño - @danilo</h6>
+                </section>
 
-    </main>
-    <footer>
-        <section class="iconos">
-            <ul>
-                <a href=""><span class="icon-facebook2 estilo_icono"></span></a>
-                <a href=""><span class="icon-instagram estilo_icono"></span></a>
-                <a href=""><span class="icon-google-plus2 estilo_icono"></span></a>
-            </ul>
-        </section>
-        <section class="texto_footer">
-            <h6>©Registro de Proyectos UTPL</h6>
-            <h6>@renzo - @pazmiño - @danilo</h6>
-        </section>
-
-    </footer>
-</body>
+            </footer>
+    </body>
 </html>

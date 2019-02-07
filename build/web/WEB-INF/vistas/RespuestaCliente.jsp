@@ -15,37 +15,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
 
-        <style>
-
-            .border{
-                background-color: gray;
-                height: 200px;
-            }
-            .border1{
-                background-color: aquamarine;
-                height: 150px;
-            }
-        </style>
-
+     
     </head>
     <body>
         <div  class="container">
             <div  class="row">
-                <div  class="col ">
+                <div  class="col-10 ">
 
-                    <div class="alert alert-success">
+                    <h2 class="alert alert-success text-justify text-center text-uppercase" >
                         <%
                             if (request.getParameter("mensaje") != null) {
                                 out.print(request.getParameter("mensaje"));
                             }
                         %>
-                    </div>
+                    </h2>
 
                 </div>
 
-                <div  class="col border">
-                    <h2 align = "center" >
-                        <a href = "<%=request.getContextPath()%>/index.html">okRespuestaCliente</a><!-- Redireccionamos a la pagina deseada-->
+                <div  class="col-10">
+                    <h2 class="alert alert-success text-justify text-center text-uppercase">
+                        <a href = "<%=request.getContextPath()%>/index.html">ok</a><!-- Redireccionamos a la pagina deseada-->
                     </h2>                                       <!--login.html-->
                 </div>
             </div>

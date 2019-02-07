@@ -54,11 +54,9 @@ public class LoginDocente extends HttpServlet {
         System.out.println("ID DOCENTE " + objdocente.getIdDocetne());
         System.out.println("USUARIO: " + objdocente.getUserDocente());
         System.out.println("CLAVE: " + objdocente.getPassDocente());
-//<<<<<<< HEAD
+
      //    System.out.println("aaeee"+objDocente.getApellidoDocente());
-//=======
-        
-//>>>>>>> 6b416b3c572c5b064901bb72d4a0169687a9a3fc
+
         String uD = objdocente.getUserDocente();
         String cD = objdocente.getPassDocente();
 

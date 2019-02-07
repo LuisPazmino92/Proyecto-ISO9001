@@ -12,10 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-//<<<<<<< HEAD
+
 import logica.LoginDocenteDAO;
-//=======
-//>>>>>>> 6b416b3c572c5b064901bb72d4a0169687a9a3fc
+
 import logica.PedidoDAO;
 import logica.PedidoDocenteDAO;
 
@@ -37,12 +36,6 @@ public class AgregarPedidoDocente extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-//<<<<<<< HEAD
-        Pedido objPedido = new Pedido();
-        request.setAttribute("pedido", objPedido);
-
-        request.getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp").forward(request, response);
-//=======
         int id = Integer.parseInt(request.getParameter("idPedido"));  
         System.out.println("id Pedido: "+id);
         
@@ -103,14 +96,13 @@ public class AgregarPedidoDocente extends HttpServlet {
             getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaPedidoDocente.jsp?mensaje="+msm).forward(request, response);
         }
         
-//>>>>>>> 6b416b3c572c5b064901bb72d4a0169687a9a3fc
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-//<<<<<<< HEAD
 
         //////
         String userDocente = request.getParameter("usuarioDocente");
@@ -134,15 +126,13 @@ public class AgregarPedidoDocente extends HttpServlet {
         
         //String uD = objdocente.getUserDocente();
         //String cD = objdocente.getPassDocente();
-        //////
-//=======
+
         //int id = (int) request.getAttribute("idd");
         
         int id = Integer.parseInt(request.getParameter("idd"));
         System.out.println("id DO POST: "+id);
         getServletContext().getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp?").forward(request, response);
-        
-//>>>>>>> 6b416b3c572c5b064901bb72d4a0169687a9a3fc
+
     }
 
     @Override
