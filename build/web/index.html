@@ -6,18 +6,125 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ISO 9001</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />	
+        <link href='//fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        <link rel="stylesheet" type="text/css" href="css/iconos.css">
+        <link rel="stylesheet" href="css/responsiveslides.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/responsiveslides.min.js"></script>
+        <script>
+            // You can also use "$(window).load(function() {"
+            $(function() {
+                // Slideshow 1
+                $("#slider1").responsiveSlides({
+                    maxwidth: 2500,
+                    speed: 600
+                });
+            });
+        </script>
     </head>
     <body>
-        <section class ="header">
-            <ul> 
-                <li><a href="PedidosCliente.html">Pedidos</a></li>
-                <li><a href="LoginDocente.html">Docente</a></li>
-                <li><a href="LoginAdmin.html">Admin</a></li>
-            </ul>
+        <!---start-header---->
+        <header>
+            <section class="wrap">
+                <section class="logo">
+                    <a href="index.html"><img src="imagenes/logo.png" title="logo" /></a>
+                </section>
+                <section class="top-nav">
+                    <h2>Registro de Proyectos UTPL</h2>
+                    <ul>
+
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="PedidosCliente.html">Pedidos</a></li>
+                        <li><a href="LoginDocente.html">Docente</a></li>
+                        <li><a href="LoginAdmin.html">Admin</a></li>
+
+                    </ul>
+                </section>
+                <div class="clear"> </div>
+            </section>
+        </header>
+        <!---End-header---->
+        <!--start-image-slider---->
+        <section class="image-slider">
+            <!-- Slideshow 1 -->
+            <ul class="rslides" id="slider1">
+
+                <li><img src="imagenes/img3.jpg" alt=""></li>
+                <li><img src="imagenes/img2.jpg" alt=""></li>
+                <li><img src="imagenes/img1.jpg" alt=""></li>
+                <!-- Slideshow 2 -->
+        </section>
+        <!--End-image-slider---->
+        <!---End-wrap---->
+        <div class="clear"> </div>
+        <!---start-content---->
+    <main class="content">
+        <section class="content_top">
+            <section class="wrap">
+                <h1><a href="#">Bienvenidos</a></h1>
+                <p>Su visión es el Humanismo de Cristo, que en su manifestación histórica y el desarrollo de su pensamiento en la tradición de la Iglesia Católica, propugna una universalidad potenciadora, conforme a la dignidad que el ser humano tiene como “hijo de Dios”, que hace a la Universidad acoger, defender y promover en la sociedad, el producto y la reflexión de toda experiencia humana. </p>
+                <span><a class="learnmore" href="#">Leer Más</a></span>
+            </section>
         </section>
 
-    </body>
+
+    </section>
+   
+</section>
+<section class="content-grids">
+    <section class="wrap">
+        <h2>Proyectos UTPL</h2>
+        <section class="grid">
+            <img src="imagenes/lab.png"/>
+            <h3>Centro de Simulación Clínico</h3>
+            <p>El Área Biológica y Biomédica de la Universidad Técnica Particular de Loja (UTPL) implementó el Centro de Simulación clínico quirúrgico y laboratorios, con la finalidad de asegurar la destreza, habilidad mental y capacidad de respuesta asertiva de los futuros profesionales en el campo de las Ciencias de la Salud</p>
+            <a class="button" href="https://www.redaccionmedica.ec/secciones/gestion/utpl-inaugura-moderno-centro-de-simulaci-n-cl-nico-quir-rgico-92347">More</a>
+        </section>
+        <section class="grid">
+            <img src="imagenes/proto.jpg">
+            <h3>Edificio de Prototipos, abriendo puertas a la innovación </h3>
+            <p>Con la presencia de la comunidad universitaria, autoridades, empresarios locales y medios de comunicación, se presenta el Edificio de Prototipos, cuyo espacio se encuentra destinado para que la empresa, el estado y la sociedad.</p>
+
+            <a class="button" href="https://noticias.utpl.edu.ec/edificio-de-prototipos-abriendo-puertas-a-la-innovacion">More</a>
+        </section>
+        <section class="grid">
+            <img src="imagenes/parque.jpg"/>
+            <h3>El Parque Científico y Tecnológico de la UTPL</h3>
+            <p>La UTPL espera que estos laboratorios se conviertan en referencia no solo para empresas nacionales, sino también para las de transnacionales; sin embargo, entendemos que este es un proceso que se basa en la confianza </p>
+            <a class="button" href="http://laconversacion.net/2017/07/el-parque-cientifico-y-tecnologico-de-la-utpl/">More</a>
+        </section>
+        <section class="clear"> </section>
+    </section>
+
+</section>
+</section>
+</section>
+</main>
+<!---End-content---->
+<div class="clear"> </div>
+
+<!---End-footer---->
+<div class="clear"> </div>
+<footer>
+    <section class="iconos">
+        <ul>
+            <a href=""><span class="icon-facebook2 estilo_icono"></span></a>
+            <a href=""><span class="icon-instagram estilo_icono"></span></a>
+            <a href=""><span class="icon-google-plus2 estilo_icono"></span></a>
+        </ul>
+    </section>
+    <section class="texto_footer">
+        <h6>©Registro de Proyectos UTPL</h6>
+        <h6>@renzo - @pazmiño - @danilo</h6>
+    </section>
+
+</footer>
+</body>
 </html>

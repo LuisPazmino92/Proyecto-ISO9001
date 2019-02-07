@@ -50,19 +50,28 @@ public class LoginDocente extends HttpServlet {
         
         //enviamos objPedido a la clase adaptador para login
         Docente objdocente = objLoginDocenteDao.login(userDocente, claveDocente);
+        
+        System.out.println("ID DOCENTE " + objdocente.getIdDocetne());
         System.out.println("USUARIO: " + objdocente.getUserDocente());
         System.out.println("CLAVE: " + objdocente.getPassDocente());
-         System.out.println("aaeee"+objDocente.getApellidoDocente());
+//<<<<<<< HEAD
+     //    System.out.println("aaeee"+objDocente.getApellidoDocente());
+//=======
+        
+//>>>>>>> 6b416b3c572c5b064901bb72d4a0169687a9a3fc
         String uD = objdocente.getUserDocente();
         String cD = objdocente.getPassDocente();
+
+        request.setAttribute("objdocente", objdocente);//envio obj docente para poder extraer el id
+        
          if ((uD != null) && (cD != null)) {
-            if (uD.equals(userDocente) && cD.equals(claveDocente)) {
+            if (uD.equals(userDocente) && cD.equals(claveDocente)) {               
                 String msm = objDocente.getCredencialesCorrectas();
                 System.out.println(msm);
-                getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaLoginDocente.jsp?mensaje=" + msm).forward(request, response);
+                getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaLoginDocente.jsp?mensaje=" +msm).forward(request, response);
             } else {
                 String msm = objDocente.getCredencialesIncorrectas();
-                System.out.println(msm);
+                //System.out.println(msm);
                 getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaLoginIncorrecto.jsp?mensaje=" + msm).forward(request, response);
             }
         } else {

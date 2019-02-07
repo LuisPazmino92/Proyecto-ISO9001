@@ -16,6 +16,19 @@
         <title>Listar</title>
     </head>
     <body>
+        <%
+        Docente objdocente = (Docente) request.getAttribute("objdocente");
+        int id = objdocente.getIdDocetne();
+        System.out.println("Id DOCENTE EN LISTAR PEDIDOS DOCENTE JSP " + id);
+        %>
+        <section class ="header">
+            <ul> 
+                <li><a href="VerPedidosDocente.html?idDocente=<%=objdocente.getIdDocetne()%>">Ver Pedidos</a></li>
+
+                <li><a href="index.html">Salir</a></li>
+                
+            </ul>
+        </section>
         <form id="frmMostrarCabeceraUsuario">
             <table id="tablaMostrarCabeceraUsuario">
                 <tr>
@@ -30,10 +43,10 @@
                 </tr>
             </table>
         </form>
-        
+
         <hr>
-        
-        <form id="frmMostrarCuerpoUsuario">
+
+        <form id="frmMostrarCuerpoUsuario" method ="post">
             <table id="tablaMostrarCuerpoUsuario">
                 <tr>
                     <th class="Titulo">
@@ -70,16 +83,14 @@
                         OBSERVACIONES
                     </th>
                 </tr>    
-                
+
                 <%
                    
                     List<Pedido> lista = (List<Pedido>)request.getAttribute("lista");
-                    
-                    //ArrayList<Pedido> lista = pedpedidodao.
                     for(Pedido objPedido :lista){
                          
                 %>
-                        
+
                 <tr>
                     <td>
                         <%=objPedido.getId()%>
@@ -115,10 +126,10 @@
                         <%=objPedido.getObservaciones()%>
                     </td>
                     <td class="Opcion">
-                        <a onclick="return confirm('¿Seguro que desea Agregar?');" href="<%=request.getContextPath()%>/AgregarPedidoDocente.html?id=<%=objPedido.getId()%>"> Agregar</a>
+                        <a onclick="return confirm('¿Seguro que desea Agregar?');" action="<%=request.getContextPath()%>" href="AgregarPedidoDocente.html?idPedido=<%=objPedido.getId()%>&&idDocente=<%=objdocente.getIdDocetne()%>"> Agregar</a>
                     </td>
                 </tr>
-                
+
                 <%
                     }
                 %>

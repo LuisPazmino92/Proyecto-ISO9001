@@ -6,6 +6,7 @@
 package servlet;
 
 import Adaptador.*;
+import clases.Docente;
 import clases.Pedido;
 import interfaz.*;
 import java.io.IOException;
@@ -35,10 +36,15 @@ public class ListarPedidosDocente extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        int idDocente = Integer.parseInt(request.getParameter("idDocente"));
+        Docente objDocente = new Docente();
+        objDocente.setIdDocetne(idDocente);//seteo id hacia la clase
+        
         IntPedidoDAO objIntPedidoDAO = new PedidoDAO();
         List<Pedido> lista = objIntPedidoDAO.listarTodos();
-        request.setAttribute("lista", lista);
         
+        request.setAttribute("lista", lista);//tipo lista
+        request.setAttribute("objdocente", objDocente);//variable
         request.getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp").forward(request, response);
     }
 
