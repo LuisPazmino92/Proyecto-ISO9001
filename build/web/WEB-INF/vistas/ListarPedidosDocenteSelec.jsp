@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ListarPedidosDocente
-    Created on : 05-feb-2019, 20:48:55
+    Document   : ListarPedidosDocenteSelec
+    Created on : 06-feb-2019, 23:29:25
     Author     : Usuario
 --%>
 
@@ -17,14 +17,13 @@
     </head>
     <body>
         <%
-        Docente objdocente = (Docente) request.getAttribute("objdocente");
-        int id = objdocente.getIdDocetne();
-        System.out.println("Id DOCENTE EN LISTAR PEDIDOS DOCENTE JSP " + id);
+        //Docente objdocente = (Docente) request.getAttribute("objdocente");
+        //int id = objdocente.getIdDocetne();
+        //System.out.println("Id DOCENTE EN LISTAR PEDIDOS DOCENTE JSP " + id);
         %>
         <section class ="header">
             <ul> 
-                <li><a href="VerPedidosDocente.html?idDocente=<%=objdocente.getIdDocetne()%>">Ver Pedidos</a></li>
-
+                
                 <li><a href="index.html">Salir</a></li>
                 
             </ul>
@@ -51,6 +50,12 @@
                 <tr>
                     <th class="Titulo">
                         ID
+                    </th>
+                    <th class="Titulo">
+                        ID DOCENTE
+                    </th>
+                    <th class="Titulo">
+                        ID PEDIDO
                     </th>
                     <th class="Titulo">
                         FECHA
@@ -86,14 +91,20 @@
 
                 <%
                    
-                    List<Pedido> lista = (List<Pedido>)request.getAttribute("lista");
-                    for(Pedido objPedido :lista){
+                    List<PedidoDocente> lista = (List<PedidoDocente>)request.getAttribute("lista");
+                    for(PedidoDocente objPedido :lista){
                          
                 %>
 
                 <tr>
                     <td>
                         <%=objPedido.getId()%>
+                    </td>
+                    <td>
+                        <%=objPedido.getIdDocente()%>
+                    </td>
+                    <td>
+                        <%=objPedido.getIdPedido()%>
                     </td>
                     <td>
                         <%=objPedido.getFecha()%>
@@ -126,7 +137,7 @@
                         <%=objPedido.getObservaciones()%>
                     </td>
                     <td class="Opcion">
-                        <a onclick="return confirm('¿Seguro que desea Agregar?');" action="<%=request.getContextPath()%>" href="AgregarPedidoDocente.html?idPedido=<%=objPedido.getId()%>&&idDocente=<%=objdocente.getIdDocetne()%>"> Agregar</a>
+                        <a onclick="return confirm('¿Seguro que desea Agregar?');" action="<%=request.getContextPath()%>" href="AgregarPedidoDocente.html?idPedido=<%=objPedido.getId()%>"> Reportes</a>
                     </td>
                 </tr>
 
@@ -138,5 +149,6 @@
         </form>
     </body>
 </html>
+
 
 

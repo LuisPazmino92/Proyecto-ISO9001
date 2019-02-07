@@ -42,11 +42,12 @@ public class LoginDocenteDAO implements IntLoginDocente {
         /*INSERT INTO docente( nombre, apellido, email, userdocente, passdocente) values('Luis','Abad','la@utpl.edu.ec','ldocente','ldocente')*/
         Docente objDocente = new Docente();
         try {
-            String sql = "SELECT nombre,apellido,email,userdocente,passdocente FROM DOCENTE WHERE USERDOCENTE = '" + userDocente + "' AND PASSDOCENTE = '" + passDocente+"'";
+            String sql = "SELECT id,nombre,apellido,email,userdocente,passdocente FROM DOCENTE WHERE USERDOCENTE = '" + userDocente + "' AND PASSDOCENTE = '" + passDocente+"'";
             Statement stm = getConnection().createStatement();
             ResultSet resultado = stm.executeQuery(sql);
             System.out.println(sql);
             while (resultado.next()) {
+                objDocente.setIdDocetne(Integer.parseInt(resultado.getString("id")));
                 objDocente.setNombreDocente(resultado.getString("nombre"));
                 objDocente.setApellidoDocente(resultado.getString("apellido"));
                 objDocente.setEmail(resultado.getString("email"));

@@ -4,6 +4,8 @@
     Author     : Docente
 --%>
 
+
+<%@page import="clases.Docente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,13 +16,17 @@
     <body>
         <h1 align = "center">
             <%
+             Docente objdocente = (Docente) request.getAttribute("objdocente");
+             int id = objdocente.getIdDocetne();
+             System.out.println("Id DOCENTE EN RESPUESTALOGIG DOCENTE JSP " + id);
+             
             if (request.getParameter("mensaje")!=null) {
                     out.print(request.getParameter("mensaje"));
                 }
             %>
         </h1>
         <h2 align = "center" >
-            <a href = "<%=request.getContextPath()%>/ListarPedidosDocente.html">Ok</a><!-- Redireccionamos a la pagina deseada-->
+            <a href = "<%=request.getContextPath()%>/ListarPedidosDocente.html?idDocente=<%=objdocente.getIdDocetne()%>" >Ok</a><!-- Redireccionamos a la pagina deseada-->
         </h2>
     </body>
 </html>

@@ -77,12 +77,12 @@ public class Docente implements Login {
 
     @Override
     public String getCredencialesCorrectas() {
-        return "Mensaje Correcto";
+        return "Usuario y Contraseña correctos";
     }
 
     @Override
     public String getCredencialesIncorrectas() {
-               return "Error al ingresar el pedido...";
+               return "Error..";
     }
 
 }

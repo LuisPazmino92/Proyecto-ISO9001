@@ -47,16 +47,16 @@ public class PedidoDocenteDAO implements IntPedidoDocenteDAO {
          List<PedidoDocente> lista = new ArrayList<PedidoDocente>();
         try {
             String sql = "SELECT * FROM PEDIDODOCENTE";
+            System.out.println(sql);
             Statement stm = getConnection().createStatement();
             ResultSet resultado = stm.executeQuery(sql);
-            System.out.println(sql);
+            
             while (resultado.next()) {
                 PedidoDocente objpedidoDocente = new PedidoDocente();
                
                 objpedidoDocente.setId(resultado.getInt("id"));
                 objpedidoDocente.setIdDocente(resultado.getInt("iddocente"));
-                objpedidoDocente.setIdPedido(resultado.getInt("idpedido"));
-                
+                objpedidoDocente.setIdPedido(resultado.getInt("idpedido"));        
                 objpedidoDocente.setFecha(resultado.getString("fecha"));
                 objpedidoDocente.setNombre(resultado.getString("nombre"));
                 objpedidoDocente.setApellido(resultado.getString("apellido"));
@@ -70,22 +70,6 @@ public class PedidoDocenteDAO implements IntPedidoDocenteDAO {
 
                 lista.add(objpedidoDocente);
             }
-            /*
-            
-iddocente 
-idpedido VARCHAR(50),
-fecha VARCHAR(50),
-nombre VARCHAR(50),
-apellido VARCHAR(50),
-empresa VARCHAR(50),
-telefono VARCHAR(50),
-estudio VARCHAR(50),
-proyecto VARCHAR(50),
-controlcalidad VARCHAR(50),
-ensayos VARCHAR(50),
-observaciones VARCHAR(50),
-PRIMARY KEY (id)
-);*/
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,11 +85,10 @@ PRIMARY KEY (id)
         PreparedStatement stm = null;        
         //-------------
         try {
-            String sql = "INSERT INTO PEDIDO(id,iddocente,idpedido fecha, nombre, apellido, empresa, telefono, estudio, proyecto, controlcalidad, ensayos, observaciones) values("
+            String sql = "INSERT INTO PEDIDODOCENTE(iddocente,idpedido, fecha, nombre, apellido, empresa, telefono, estudio, proyecto, controlcalidad, ensayos, observaciones) values("
                     
                     + "'" + objpedidoDocente.getIdDocente()+ "'" + ","
-                    + "'" + objpedidoDocente.getIdPedido()+ "'" + ","
-                    
+                    + "'" + objpedidoDocente.getIdPedido()+ "'" + ","         
                     + "'" + objpedidoDocente.getFecha() + "'" + ","
                     + "'" + objpedidoDocente.getNombre() + "'" + ","
                     + "'" + objpedidoDocente.getApellido() + "'" + ","
