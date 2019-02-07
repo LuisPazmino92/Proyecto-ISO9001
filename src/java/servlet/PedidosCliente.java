@@ -5,6 +5,9 @@
  */
 package servlet;
 
+import Patron_State_Notificacion.Correo;
+import Patron_State_Notificacion.EnviandoNotificacion;
+import Patron_State_Notificacion.Notificacion;
 import clases.Pedido;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -33,8 +36,8 @@ public class PedidosCliente extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/vistas/FormularioPedido.jsp").forward(request,response);
-        
+        getServletContext().getRequestDispatcher("/WEB-INF/vistas/FormularioPedido.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -52,7 +55,7 @@ public class PedidosCliente extends HttpServlet {
         //processRequest(request, response);
         Pedido objpedido = new Pedido();
         request.setAttribute("pedido", objpedido);
-        request.getRequestDispatcher("/WEB-INF/vistas/FormularioPedido.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/vistas/FormularioPedido.jsp").forward(request, response);
     }
 
     /**
@@ -67,7 +70,7 @@ public class PedidosCliente extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-                
+
         String fecha = request.getParameter("fecha");
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
@@ -76,10 +79,11 @@ public class PedidosCliente extends HttpServlet {
         String estudio = request.getParameter("estudio");
         String proyecto = request.getParameter("proyecto");
         String controlcalidad = request.getParameter("controlcalidad");
+        String ensayos = request.getParameter("ensayos");
         String observaciones = request.getParameter("observaciones");
-        
+
         PedidoDAO objPedidoDao = new PedidoDAO();//instancia Adaptador -> las sentencias para  CRUD
-        
+
         Pedido objpedido = new Pedido();
         //objpedido.setId(id);
         objpedido.setFecha(fecha);
@@ -90,18 +94,27 @@ public class PedidosCliente extends HttpServlet {
         objpedido.setEstudio(estudio);
         objpedido.setProyecto(proyecto);
         objpedido.setControlcalidad(controlcalidad);
+        objpedido.setEnsayos(ensayos);
         objpedido.setObservaciones(observaciones);
-        
+
         boolean respuesta = objPedidoDao.registrar(objpedido);//enviamos objPedido a la clase adaptador para crud
-        
+               
         if (respuesta) {
-            String msm = objpedido.getMensajeInsertCorrecto();
+            //Patron State....Instancia de clases
+            Correo correo = new Correo();
+            EnviandoNotificacion envia = new EnviandoNotificacion();
+            Notificacion notificar = new Notificacion();
+            
+            correo.setEstado(envia);//Patron State
+            correo.setEstado(notificar);
+            
+            String msm = objpedido.getMensajeInsertCorrecto();//patron brigte
             //System.out.println(msm);
-            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaCliente.jsp?mensaje="+msm).forward(request, response);
-        }else{
+            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaCliente.jsp?mensaje=" + msm).forward(request, response);
+        } else {
             String msm = objpedido.getMensajeInsertInCorrecto();
             //System.out.println(msm);
-            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaCliente.jsp?mensaje="+msm).forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaCliente.jsp?mensaje=" + msm).forward(request, response);
         }
     }
 

@@ -108,7 +108,7 @@ public class ActualizarPedido extends HttpServlet {
         objpedido.setEstudio(estudio);
         objpedido.setProyecto(proyecto);
         objpedido.setControlcalidad(controlcalidad);
-        objpedido.setControlcalidad(ensayos);
+        objpedido.setEnsayos(ensayos);
         objpedido.setObservaciones(observaciones);
         
         boolean respuesta = objPedidoDao.actualizar(objpedido);//enviamos objPedido a la clase adaptador para crud

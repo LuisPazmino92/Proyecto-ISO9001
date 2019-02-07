@@ -76,7 +76,7 @@
                             <label for="user"class="col-3 col-form-label">User:</label>
                             <input id="usuario" type="text" name="usuario" placeholder="usuario@utpl.edu.ec" required class="form-control col-9">
                             <label for="pass"class="col-3 col-form-label">Password:</label>
-                            <input id="clave" type="text" name="clave" placeholder="Contraseña" required  class="form-control col-9">
+                            <input id="clave" type="password" name="clave" placeholder="Contraseña" required  class="form-control col-9">
                             <!--<button type="submit">Ingresar</button>-->
                             <input type="submit" value="Ingresar" name="submit" class="btn btn-danger" />
                         </div>

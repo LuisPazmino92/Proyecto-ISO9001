@@ -25,7 +25,7 @@
             <table id="tablaMostrarCabeceraUsuario">
                 <tr>
                     <th>
-                        <h1> formulario </h1>
+                        <h1>Tabla de Pedidos </h1>
                     </th>
                 </tr>
                 <tr>
