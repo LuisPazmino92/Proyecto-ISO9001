@@ -93,6 +93,7 @@ public class ActualizarPedido extends HttpServlet {
         String estudio = request.getParameter("estudio");
         String proyecto = request.getParameter("proyecto");
         String controlcalidad = request.getParameter("controlcalidad");
+        String ensayos = request.getParameter("ensayos");
         String observaciones = request.getParameter("observaciones");
         
         PedidoDAO objPedidoDao = new PedidoDAO();//instancia Adaptador -> las sentencias para  CRUD
@@ -107,6 +108,7 @@ public class ActualizarPedido extends HttpServlet {
         objpedido.setEstudio(estudio);
         objpedido.setProyecto(proyecto);
         objpedido.setControlcalidad(controlcalidad);
+        objpedido.setControlcalidad(ensayos);
         objpedido.setObservaciones(observaciones);
         
         boolean respuesta = objPedidoDao.actualizar(objpedido);//enviamos objPedido a la clase adaptador para crud

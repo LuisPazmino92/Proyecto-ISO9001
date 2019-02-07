@@ -29,21 +29,21 @@ public class AgregarPedidoDocente extends HttpServlet {
             throws ServletException, IOException {
 
         getServletContext().getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp").forward(request, response);
-        
+
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //processRequest(request, response);
-        int id = Integer.parseInt(request.getParameter("idPedido"));  
-        System.out.println("id Pedido: "+id);
-        
-        int id2 = Integer.parseInt(request.getParameter("idDocente"));  
-        System.out.println("id Docente: "+id2);
-        
+        int id = Integer.parseInt(request.getParameter("idPedido"));
+        System.out.println("id Pedido: " + id);
+
+        int id2 = Integer.parseInt(request.getParameter("idDocente"));
+        System.out.println("id Docente: " + id2);
+
         PedidoDAO objPedidoDAO = new PedidoDAO();
-        
+
         Pedido objPedido = new Pedido();
         objPedido = objPedidoDAO.leerPorId(id);//obj pedido se asigna la consulta    
         //variables q se almacenaran en PedidoDocenteDAO
@@ -55,19 +55,21 @@ public class AgregarPedidoDocente extends HttpServlet {
         String estudio = objPedido.getEstudio();
         String proyecto = objPedido.getProyecto();
         String controlcalidad = objPedido.getControlcalidad();
+        String ensayo = objPedido.getEnsayos();
         String observaciones = objPedido.getObservaciones();
-        System.out.println("AGREGAR PEDIDO DOCENTE idPedido: "+id);
-        System.out.println("AGREGAR PEDIDO DOCENTE idDocente: "+id2);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+fecha);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+nombre);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+apellido);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+empresa);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+telefono);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+estudio);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+proyecto);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+controlcalidad);
-        System.out.println("AGREGAR PEDIDO DOCENTE: "+observaciones);
-        
+        System.out.println("AGREGAR PEDIDO DOCENTE idPedido: " + id);
+        System.out.println("AGREGAR PEDIDO DOCENTE idDocente: " + id2);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + fecha);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + nombre);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + apellido);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + empresa);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + telefono);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + estudio);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + proyecto);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + controlcalidad);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + ensayo);
+        System.out.println("AGREGAR PEDIDO DOCENTE: " + observaciones);
+
         //------------------------------------------------------------------
         //ENVIA LOS RESULTADOS DE LA CONSULTA AL INSRT DE PEDIDO CLIENTE DAO
         PedidoDocenteDAO objPedidoDocenteDAO = new PedidoDocenteDAO();
@@ -82,20 +84,20 @@ public class AgregarPedidoDocente extends HttpServlet {
         objPedidoDocente.setEstudio(estudio);
         objPedidoDocente.setProyecto(proyecto);
         objPedidoDocente.setControlcalidad(controlcalidad);
+        objPedidoDocente.setEnsayos(ensayo);
         objPedidoDocente.setObservaciones(observaciones);
-        
+
         boolean respuesta = objPedidoDocenteDAO.registrar(objPedidoDocente);
-        
+
         if (respuesta) {
             String msm = objPedidoDocente.getCredencialesCorrectas();
             System.out.println(msm);
-            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaPedidoDocente.jsp?mensaje="+msm).forward(request, response);
-        }else{
+            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaPedidoDocente.jsp?mensaje=" + msm).forward(request, response);
+        } else {
             String msm = objPedidoDocente.getCredencialesIncorrectas();
             System.out.println(msm);
-            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaPedidoDocente.jsp?mensaje="+msm).forward(request, response);
+            getServletContext().getRequestDispatcher("/WEB-INF/vistas/RespuestaPedidoDocente.jsp?mensaje=" + msm).forward(request, response);
         }
-        
 
     }
 
@@ -122,15 +124,13 @@ public class AgregarPedidoDocente extends HttpServlet {
 
         IntPedidoDAO objIntPedidoDAO = new PedidoDAO();
         List<Pedido> lista = objIntPedidoDAO.listarTodos();
-       System.out.println("Empresa: " + objPedido.getEmpresa());
-        
+        System.out.println("Empresa: " + objPedido.getEmpresa());
+
         //String uD = objdocente.getUserDocente();
         //String cD = objdocente.getPassDocente();
-
         //int id = (int) request.getAttribute("idd");
-        
         int id = Integer.parseInt(request.getParameter("idd"));
-        System.out.println("id DO POST: "+id);
+        System.out.println("id DO POST: " + id);
         getServletContext().getRequestDispatcher("/WEB-INF/vistas/ListarPedidosDocente.jsp?").forward(request, response);
 
     }

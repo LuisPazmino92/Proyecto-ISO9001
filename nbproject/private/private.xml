@@ -3,21 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/ListarPedidos.jsp</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/VerPedidosDocente.java</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/RespuestaCliente.jsp</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/FormularioPedido.jsp</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/ActualizarPedido.java</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/PedidosCliente.java</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/respuestaLoginIncorrecto.jsp</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/FormularioActualizarPedido.jsp</file>
             <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/AgregarPedidoDocente.java</file>
+            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/ListarPedidos.jsp</file>
+            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/LoginDocente.jsp</file>
             <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/css/style.css</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/ListarPedidosDocente.java</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/Respuesta.jsp</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/LoginDocente.java</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/RespuestaLoginDocente.jsp</file>
-            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/RespuestaLogin.jsp</file>
+            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/WEB-INF/vistas/FormularioPedido.jsp</file>
+            <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/web/css/estilos.css</file>
             <file>file:/C:/Users/renzo/Documents/NetBeansProjects/gitapp/Proyecto-ISO9001/src/java/servlet/ListarPedidos.java</file>
         </group>
     </open-files>
